@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
   <meta charset="UTF-8">
   <title>Manga Illustrations | iO44 Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -160,6 +165,86 @@
       margin-top: 3rem;
       border-top: 2px solid #00ffff44;
     }
+	
+	
+	html.light-mode body {
+  background: #fff;
+  color: #000;
+}
+
+/* or also just this for broad coverage */
+html.light-mode .style-block {
+  background: #fff;
+  color: #000;
+}
+
+html.light-mode body {
+  background: #ffffff;
+  color: #000000;
+}
+
+html.light-mode header {
+  background-color: #f0f0f0;
+  color: #000000;
+  border-bottom: 2px solid #00ffff44;
+}
+
+html.light-mode .logo {
+  color: #00aaaa;
+  text-shadow: none;
+}
+
+html.light-mode .back-button {
+  background-color: #00aaaa;
+  color: #fff;
+}
+
+html.light-mode .back-button:hover {
+  background-color: #fff;
+  color: #00aaaa;
+  box-shadow: 0 0 12px #00aaaa, 0 0 30px #00aaaa inset;
+}
+
+html.light-mode h1 {
+  color: #00aaaa;
+  text-shadow: none;
+}
+
+html.light-mode .nav-buttons button {
+  background-color: #fff;
+  color: #00aaaa;
+  border-color: #00aaaa;
+}
+
+html.light-mode .nav-buttons button:hover {
+  background-color: #00aaaa;
+  color: #fff;
+}
+
+html.light-mode .gallery-card {
+  background-color: #f9f9f9;
+  box-shadow: 0 0 8px #00aaaa22;
+}
+
+html.light-mode .gallery-card.active {
+  border: 2px solid #00aaaa;
+  box-shadow: 0 0 20px #00aaaaaa;
+}
+
+html.light-mode .gallery-card.active .gallery-image {
+  box-shadow: 0 0 20px #00aaaaaa;
+}
+
+html.light-mode .character-name {
+  color: #00aaaa;
+}
+
+html.light-mode footer {
+  background-color: #f0f0f0;
+  color: #000;
+  border-top: 2px solid #00aaaa44;
+}
+
   </style>
 </head>
 <body>
