@@ -750,6 +750,18 @@ body.light-mode .thank-you-message p {
   color: #000;
 }
 
+.portfolio-note {
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  color: #ccffff;
+  font-size: 1rem;
+}
+
+body.light-mode .portfolio-note {
+  color: #222;
+}
+
 </style>
 
 </head>
@@ -817,6 +829,9 @@ body.light-mode .thank-you-message p {
 
 <section id="portfolio" class="portfolio">
   <h2 data-aos="fade-up">Discover My Portfolio</h2>
+ <p class="portfolio-note" data-aos="fade-up" data-aos-delay="100">
+  Click on the images to view the galleries.
+</p>
   <div class="portfolio-nav" data-aos="zoom-in">
     <button onclick="scrollCats(-1)">← Prev</button>
     <button onclick="scrollCats(1)">Next →</button>
