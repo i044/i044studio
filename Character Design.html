@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Select | iO44 Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #00ffff44;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
+    }
+
+    .back-button {
+      background-color: #00ffff;
+      color: #000;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #000;
+      color: #00ffff;
+      box-shadow: 0 0 12px #00ffff, 0 0 30px #00ffff inset;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      color: #00ffff;
+      font-size: 2.4rem;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 6px #00ffffaa;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-buttons button {
+      background-color: #111;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #00ffff;
+      color: #000;
+    }
+
+    .gallery-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 2rem;
+      padding: 2rem;
+      padding-left: calc(50vw - 150px);
+      padding-right: calc(50vw - 150px);
+      scroll-behavior: smooth;
+    }
+
+    .gallery-container::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .gallery-container::-webkit-scrollbar-thumb {
+      background: #00ffff;
+      border-radius: 10px;
+    }
+
+    .gallery-card {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      width: 300px;
+      background: #111;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 8px #00ffff22;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      position: relative;
+      transform: scale(1);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 380px;
+      border-radius: 10px;
+      object-fit: cover;
+      opacity: 0.6;
+      transform: scale(0.95);
+      transition: 0.4s ease;
+    }
+
+    .gallery-card.active {
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 20px #00ffffaa;
+      z-index: 2;
+      transform: scale(1.08);
+    }
+
+    .gallery-card.active .gallery-image {
+      opacity: 1;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #00ffffaa;
+    }
+
+    .character-name {
+      margin-top: 0.8rem;
+      color: #00ffff;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: #fff;
+      margin-top: 3rem;
+      border-top: 2px solid #00ffff44;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">iO44 Studio</div>
+  <a href="index.html" class="back-button">← Back</a>
+</header>
+
+<h1 data-aos="fade-down">Select Your Character Design</h1>
+
+<div class="nav-buttons" data-aos="zoom-in">
+  <button onclick="scrollGallery(-1)">← Prev</button>
+  <button onclick="scrollGallery(1)">Next →</button>
+</div>
+
+<div class="gallery-container" id="gallery">
+  <div class="gallery-card">
+    <img src="Character Design.jpg" alt="Character 1" class="gallery-image">
+    <div class="character-name">CHARACTER 01</div>
+  </div>
+
+  <div class="gallery-card">
+    <img src="char1.jpg" alt="Character 2" class="gallery-image">
+    <div class="character-name">CHARACTER 02</div>
+  </div>
+  <div class="gallery-card">
+    <img src="char2.png" alt="Character 3" class="gallery-image">
+    <div class="character-name">CHARACTER 03</div>
+  </div>
+  <div class="gallery-card">
+    <img src="char3.png" alt="Character 4" class="gallery-image">
+    <div class="character-name">CHARACTER 04</div>
+  </div>
+  <div class="gallery-card">
+    <img src="char5.png" alt="Character 5" class="gallery-image">
+    <div class="character-name">CHARACTER 05</div>
+  </div>
+  <div class="gallery-card">
+    <img src="char6.jpg" alt="Character 6" class="gallery-image">
+    <div class="character-name">CHARACTER 06</div>
+  </div>
+  <div class="gallery-card">
+    <img src="char7.jpg" alt="Character 7" class="gallery-image">
+    <div class="character-name">CHARACTER 07</div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 iO44 Studio. All Rights Reserved.</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  function scrollGallery(direction) {
+    const gallery = document.getElementById('gallery');
+    const scrollAmount = 350;
+    gallery.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  function updateActiveImage() {
+    const gallery = document.getElementById('gallery');
+    const cards = gallery.querySelectorAll('.gallery-card');
+    const galleryRect = gallery.getBoundingClientRect();
+    const galleryCenter = galleryRect.left + galleryRect.width / 2;
+
+    let closestCard = null;
+    let closestDistance = Infinity;
+
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(galleryCenter - cardCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestCard = card;
+      }
+    });
+
+    cards.forEach((card) => card.classList.remove('active'));
+    if (closestCard) closestCard.classList.add('active');
+  }
+
+  const gallery = document.getElementById('gallery');
+  gallery.addEventListener('scroll', updateActiveImage);
+  window.addEventListener('load', updateActiveImage);
+  window.addEventListener('resize', updateActiveImage);
+</script>
+
+</body>
+</html>
