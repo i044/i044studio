@@ -7,10 +7,9 @@
     }
   </script>
   <meta charset="UTF-8">
-  <title>Fanart Gallery | iO44 Studio</title>
+  <title>Fanarts | iO44 Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -132,8 +131,8 @@
       border-radius: 10px;
       object-fit: cover;
       opacity: 0.6;
-      transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
       transform: scale(0.95);
+      transition: 0.4s ease;
     }
 
     .gallery-card.active {
@@ -149,7 +148,7 @@
       box-shadow: 0 0 20px #00ffffaa;
     }
 
-    .character-name {
+    .caption {
       margin-top: 0.8rem;
       color: #00ffff;
       font-weight: 600;
@@ -167,7 +166,6 @@
       border-top: 2px solid #00ffff44;
     }
 
-    /* Light Mode Support */
     html.light-mode body {
       background: #ffffff;
       color: #000000;
@@ -225,7 +223,7 @@
       box-shadow: 0 0 20px #00aaaaaa;
     }
 
-    html.light-mode .character-name {
+    html.light-mode .caption {
       color: #00aaaa;
     }
 
@@ -256,32 +254,29 @@
   <a href="index.html" class="back-button">← Back</a>
 </header>
 
-<h1 data-aos="fade-down">Fanart Gallery</h1>
+<h1>Fanarts</h1>
 
-<div class="nav-buttons" data-aos="zoom-in">
+<div class="nav-buttons">
   <button onclick="scrollGallery(-1)">← Prev</button>
   <button onclick="scrollGallery(1)">Next →</button>
 </div>
 
 <div class="gallery-container" id="gallery">
   <div class="gallery-card">
-    <img src="Fanarts.JPG" alt="Fanart 1" class="gallery-image">
-    <div class="character-name">NOLAN GRAYSON</div>
+    <img src="Fanarts.jpg" alt="Fanart 1" class="gallery-image">
+    <div class="caption">NOLAN GRAYSON</div>
   </div>
   <div class="gallery-card">
     <img src="fan2.jpg" alt="Fanart 2" class="gallery-image">
-    <div class="character-name">SONIC</div>
+    <div class="caption">SONIC</div>
   </div>
- 
+
 
 <footer>
   <p>© 2025 iO44 Studio. All Rights Reserved.</p>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
-
   function scrollGallery(direction) {
     const gallery = document.getElementById('gallery');
     const scrollAmount = 350;
