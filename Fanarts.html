@@ -22,6 +22,13 @@
       background-color: #0a0a0a;
       color: #ffffff;
       font-family: 'Space Grotesk', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
     }
 
     header {
@@ -162,7 +169,6 @@
       padding: 1rem;
       background-color: #000;
       color: #fff;
-      margin-top: 3rem;
       border-top: 2px solid #00ffff44;
     }
 
@@ -246,75 +252,76 @@
 
 <body>
 
-<header>
-  <div class="logo">
-    <img src="Logo.png" alt="iO44 Logo" class="logo-img" style="height: 45px; vertical-align: middle; margin-right: 10px;">
-    <span>iO44 Studio</span>
-  </div>
-  <a href="index.html" class="back-button">← Back</a>
-</header>
+  <header>
+    <div class="logo">
+      <img src="Logo.png" alt="iO44 Logo" class="logo-img" style="height: 45px; vertical-align: middle; margin-right: 10px;">
+      <span>iO44 Studio</span>
+    </div>
+    <a href="index.html" class="back-button">← Back</a>
+  </header>
 
-<h1>Fanarts</h1>
+  <main>
+    <h1>Fanarts</h1>
 
-<div class="nav-buttons">
-  <button onclick="scrollGallery(-1)">← Prev</button>
-  <button onclick="scrollGallery(1)">Next →</button>
-</div>
+    <div class="nav-buttons">
+      <button onclick="scrollGallery(-1)">← Prev</button>
+      <button onclick="scrollGallery(1)">Next →</button>
+    </div>
 
-<div class="gallery-container" id="gallery">
-  <div class="gallery-card">
-    <img src="Fanarts.jpg" alt="Fanart 1" class="gallery-image">
-    <div class="caption">NOLAN GRAYSON</div>
-  </div>
-  <div class="gallery-card">
-    <img src="fan2.jpg" alt="Fanart 2" class="gallery-image">
-    <div class="caption">SONIC</div>
-  </div>
+    <div class="gallery-container" id="gallery">
+      <div class="gallery-card">
+        <img src="Fanarts.jpg" alt="Fanart 1" class="gallery-image">
+        <div class="caption">NOLAN GRAYSON</div>
+      </div>
+      <div class="gallery-card">
+        <img src="fan2.JPG" alt="Fanart 2" class="gallery-image">
+        <div class="caption">SONIC</div>
+      </div>
+    </div>
+  </main>
 
+  <footer>
+    <p>© 2025 iO44 Studio. All Rights Reserved.</p>
+  </footer>
 
-<footer>
-  <p>© 2025 iO44 Studio. All Rights Reserved.</p>
-</footer>
+  <script>
+    function scrollGallery(direction) {
+      const gallery = document.getElementById('gallery');
+      const scrollAmount = 350;
+      gallery.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
 
-<script>
-  function scrollGallery(direction) {
+    function updateActiveImage() {
+      const gallery = document.getElementById('gallery');
+      const cards = gallery.querySelectorAll('.gallery-card');
+      const galleryRect = gallery.getBoundingClientRect();
+      const galleryCenter = galleryRect.left + galleryRect.width / 2;
+
+      let closestCard = null;
+      let closestDistance = Infinity;
+
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const distance = Math.abs(galleryCenter - cardCenter);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestCard = card;
+        }
+      });
+
+      cards.forEach((card) => card.classList.remove('active'));
+      if (closestCard) closestCard.classList.add('active');
+    }
+
     const gallery = document.getElementById('gallery');
-    const scrollAmount = 350;
-    gallery.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
-    });
-  }
-
-  function updateActiveImage() {
-    const gallery = document.getElementById('gallery');
-    const cards = gallery.querySelectorAll('.gallery-card');
-    const galleryRect = gallery.getBoundingClientRect();
-    const galleryCenter = galleryRect.left + galleryRect.width / 2;
-
-    let closestCard = null;
-    let closestDistance = Infinity;
-
-    cards.forEach((card) => {
-      const rect = card.getBoundingClientRect();
-      const cardCenter = rect.left + rect.width / 2;
-      const distance = Math.abs(galleryCenter - cardCenter);
-
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closestCard = card;
-      }
-    });
-
-    cards.forEach((card) => card.classList.remove('active'));
-    if (closestCard) closestCard.classList.add('active');
-  }
-
-  const gallery = document.getElementById('gallery');
-  gallery.addEventListener('scroll', updateActiveImage);
-  window.addEventListener('load', updateActiveImage);
-  window.addEventListener('resize', updateActiveImage);
-</script>
+    gallery.addEventListener('scroll', updateActiveImage);
+    window.addEventListener('load', updateActiveImage);
+    window.addEventListener('resize', updateActiveImage);
+  </script>
 
 </body>
 </html>
