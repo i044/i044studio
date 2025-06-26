@@ -780,71 +780,56 @@ body.light-mode .portfolio-note {
 }
 
 .socials-box {
-  background-color: #111;
-  padding: 2rem;
+  background-color: #111; /* dark mode bg */
+  padding: 1.5rem;
   border-radius: 12px;
   margin: 2rem auto;
   color: #00ffff;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
   box-shadow: 0 0 12px #00ffff44;
-  z-index: 10;
   position: relative;
-  opacity: 1;
-  max-width: 600px;
-  width: 90%;
+  max-width: 400px;
+  z-index: 10;
   text-align: center;
-  box-sizing: border-box;
 }
 
-/* Hide bg bleed */
-.socials-box::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: inherit;
-  z-index: -1;
-  border-radius: 12px;
-}
-
-/* Header style */
 .socials-box h2 {
   color: #00ffff;
   font-family: 'Orbitron', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 6px #00ffff88;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 5px #00ffff88;
 }
 
-/* List */
 .socials-box ul {
   list-style: none;
   padding: 0;
-  margin: 1rem 0 0;
+  margin: 0;
 }
 
-/* Each item */
 .socials-box li {
-  margin: 0.7rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
+  margin: 0.6rem 0;
 }
 
-/* Link style */
 .socials-box a {
   color: #00ffff;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.6rem;
 }
 
-/* Hover */
+.socials-box a img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(1); /* normal for dark mode */
+  transition: 0.3s ease;
+}
+
 .socials-box a:hover {
   color: #000;
   background-color: #00ffff;
@@ -852,19 +837,11 @@ body.light-mode .portfolio-note {
   border-radius: 8px;
 }
 
-/* Icon style */
-.socials-box img {
-  height: 24px;
-  width: 24px;
-  vertical-align: middle;
-}
-
-/* Light mode fix */
 html.light-mode .socials-box {
   background-color: #ffffff !important;
   color: #00aaaa;
+  box-shadow: 0 0 18px #00aaaa66;
   border: 2px solid #00aaaa;
-  box-shadow: 0 0 20px #00aaaa66;
 }
 
 html.light-mode .socials-box h2,
@@ -877,6 +854,11 @@ html.light-mode .socials-box a:hover {
   background-color: #00aaaa;
   color: #ffffff;
 }
+
+html.light-mode .socials-box a img {
+  filter: brightness(0.5) saturate(2);
+}
+
 
 
 </style>
@@ -1106,7 +1088,7 @@ html.light-mode .socials-box a:hover {
     </li>
     <li>
       <a href="https://x.com/7akada_airi" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X"> X (Twitter)
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X"> X
       </a>
     </li>
     <li>
