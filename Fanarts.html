@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
+  <meta charset="UTF-8">
+  <title>Fanart Gallery | iO44 Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* [Keep your existing styles here unchanged!] */
+    /* Your CSS from above goes here — or link it if you externalized it */
+  </style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XHK4NW74H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5XHK4NW74H');
+</script>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="Logo.png" alt="iO44 Logo" class="logo-img" style="height: 45px; vertical-align: middle; margin-right: 10px;">
+    <span>iO44 Studio</span>
+  </div>
+  <a href="index.html" class="back-button">← Back</a>
+</header>
+
+<h1 data-aos="fade-down">Fanart Gallery</h1>
+
+<div class="nav-buttons" data-aos="zoom-in">
+  <button onclick="scrollGallery(-1)">← Prev</button>
+  <button onclick="scrollGallery(1)">Next →</button>
+</div>
+
+<div class="gallery-container" id="gallery">
+  <div class="gallery-card">
+    <img src="fan1.jpg" alt="Invincible Fanart" class="gallery-image">
+    <div class="character-name">MARK GRAYSON</div>
+  </div>
+  <div class="gallery-card">
+    <img src="fan2.jpg" alt="Omni-Man" class="gallery-image">
+    <div class="character-name">OMNI-MAN</div>
+  </div>
+  <div class="gallery-card">
+    <img src="fan3.jpg" alt="Debbie" class="gallery-image">
+    <div class="character-name">DEBBIE GRAYSON</div>
+  </div>
+  <div class="gallery-card">
+    <img src="fan4.jpg" alt="William" class="gallery-image">
+    <div class="character-name">WILLIAM CLOCKWELL</div>
+  </div>
+  <div class="gallery-card">
+    <img src="fan5.jpg" alt="Oliver" class="gallery-image">
+    <div class="character-name">OLIVER GRAYSON</div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 iO44 Studio. All Rights Reserved.</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  function scrollGallery(direction) {
+    const gallery = document.getElementById('gallery');
+    const scrollAmount = 350;
+    gallery.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  function updateActiveImage() {
+    const gallery = document.getElementById('gallery');
+    const cards = gallery.querySelectorAll('.gallery-card');
+    const galleryRect = gallery.getBoundingClientRect();
+    const galleryCenter = galleryRect.left + galleryRect.width / 2;
+
+    let closestCard = null;
+    let closestDistance = Infinity;
+
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(galleryCenter - cardCenter);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestCard = card;
+      }
+    });
+
+    cards.forEach((card) => card.classList.remove('active'));
+    if (closestCard) closestCard.classList.add('active');
+  }
+
+  const gallery = document.getElementById('gallery');
+  gallery.addEventListener('scroll', updateActiveImage);
+  window.addEventListener('load', updateActiveImage);
+  window.addEventListener('resize', updateActiveImage);
+</script>
+
+</body>
+</html>
+
