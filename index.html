@@ -780,15 +780,33 @@ body.light-mode .portfolio-note {
 }
 
 .socials-box {
-  max-width: 500px;
-  margin: 4rem auto 2rem;
-  padding: 2rem;
-  border: 2px solid #00ffffaa;
-  border-radius: 12px;
-  background-color: #111111;
-  box-shadow: 0 0 18px #00ffff66;
-  text-align: center;
-  opacity: 100%; /* full opacity */
+  background-color: #111; /* dark mode */
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  color: #00ffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 0 12px #00ffff44;
+  z-index: 10;
+  position: relative;
+  opacity: 1; /* force full opacity */
+}
+
+/* Make sure it visually separates from animated BG */
+.socials-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: -1;
+}
+
+/* Light mode overrides */
+html.light-mode .socials-box {
+  background-color: #ffffff; /* solid white */
+  color: #00aaaa;
+  box-shadow: 0 0 12px #00aaaa44;
 }
 
 .socials-box h2 {
@@ -1058,13 +1076,13 @@ html.light-mode .socials-box a:hover {
   </div>
 </section>
 
-<div class="socials-box">
-  <h2>Follow Airi</h2>
-  <ul>
+<div class="socials-box" data-aos="fade-up" data-aos-delay="300">
+  <p style="margin-bottom: 0.5rem;">Follow Airi:</p>
+  <ul style="list-style: none; padding-left: 0;">
     <li><a href="https://www.instagram.com/7akada_airi/" target="_blank">Instagram</a></li>
-    <li><a href="https://x.com/7akada_airi?t=RJT70sJU4oD3jrmm8kXnWw&s=09" target="_blank">X (Twitter)</a></li>
-    <li><a href="https://www.tiktok.com/@7akada_airi?_t=ZS-8xWHgLp5rqp&_r=1" target="_blank">TikTok</a></li>
-    <li><a href="https://7akada-airi.tumblr.com/?source=share" target="_blank">Tumblr</a></li>
+    <li><a href="https://x.com/7akada_airi" target="_blank">X (Twitter)</a></li>
+    <li><a href="https://www.tiktok.com/@7akada_airi" target="_blank">TikTok</a></li>
+    <li><a href="https://7akada-airi.tumblr.com/" target="_blank">Tumblr</a></li>
   </ul>
 </div>
 
