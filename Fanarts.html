@@ -12,8 +12,228 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    /* [Keep your existing styles here unchanged!] */
-    /* Your CSS from above goes here — or link it if you externalized it */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #00ffff44;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
+    }
+
+    .back-button {
+      background-color: #00ffff;
+      color: #000;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #000;
+      color: #00ffff;
+      box-shadow: 0 0 12px #00ffff, 0 0 30px #00ffff inset;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      color: #00ffff;
+      font-size: 2.4rem;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 6px #00ffffaa;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-buttons button {
+      background-color: #111;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #00ffff;
+      color: #000;
+    }
+
+    .gallery-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 2rem;
+      padding: 2rem;
+      padding-left: calc(50vw - 150px);
+      padding-right: calc(50vw - 150px);
+      scroll-behavior: smooth;
+    }
+
+    .gallery-container::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .gallery-container::-webkit-scrollbar-thumb {
+      background: #00ffff;
+      border-radius: 10px;
+    }
+
+    .gallery-card {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      width: 300px;
+      background: #111;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 8px #00ffff22;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      position: relative;
+      transform: scale(1);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 380px;
+      border-radius: 10px;
+      object-fit: cover;
+      opacity: 0.6;
+      transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+      transform: scale(0.95);
+    }
+
+    .gallery-card.active {
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 20px #00ffffaa;
+      z-index: 2;
+      transform: scale(1.08);
+    }
+
+    .gallery-card.active .gallery-image {
+      opacity: 1;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #00ffffaa;
+    }
+
+    .character-name {
+      margin-top: 0.8rem;
+      color: #00ffff;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: #fff;
+      margin-top: 3rem;
+      border-top: 2px solid #00ffff44;
+    }
+
+    /* Light Mode Support */
+    html.light-mode body {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    html.light-mode header {
+      background-color: #f0f0f0;
+      color: #000000;
+      border-bottom: 2px solid #00ffff44;
+    }
+
+    html.light-mode .logo {
+      color: #00aaaa;
+      text-shadow: none;
+    }
+
+    html.light-mode .back-button {
+      background-color: #00aaaa;
+      color: #fff;
+    }
+
+    html.light-mode .back-button:hover {
+      background-color: #fff;
+      color: #00aaaa;
+      box-shadow: 0 0 12px #00aaaa, 0 0 30px #00aaaa inset;
+    }
+
+    html.light-mode h1 {
+      color: #00aaaa;
+      text-shadow: none;
+    }
+
+    html.light-mode .nav-buttons button {
+      background-color: #fff;
+      color: #00aaaa;
+      border-color: #00aaaa;
+    }
+
+    html.light-mode .nav-buttons button:hover {
+      background-color: #00aaaa;
+      color: #fff;
+    }
+
+    html.light-mode .gallery-card {
+      background-color: #f9f9f9;
+      box-shadow: 0 0 8px #00aaaa22;
+    }
+
+    html.light-mode .gallery-card.active {
+      border: 2px solid #00aaaa;
+      box-shadow: 0 0 20px #00aaaaaa;
+    }
+
+    html.light-mode .gallery-card.active .gallery-image {
+      box-shadow: 0 0 20px #00aaaaaa;
+    }
+
+    html.light-mode .character-name {
+      color: #00aaaa;
+    }
+
+    html.light-mode footer {
+      background-color: #f0f0f0;
+      color: #000;
+      border-top: 2px solid #00aaaa44;
+    }
   </style>
 </head>
 
@@ -45,19 +265,14 @@
 
 <div class="gallery-container" id="gallery">
   <div class="gallery-card">
-    <img src="Fanarts.JPG" alt="Nolan Grayson" class="gallery-image">
+    <img src="Fanarts.JPG" alt="Fanart 1" class="gallery-image">
     <div class="character-name">NOLAN GRAYSON</div>
   </div>
   <div class="gallery-card">
-    <img src="fan2.jpg" alt="Sonic" class="gallery-image">
+    <img src="fan2.jpg" alt="Fanart 2" class="gallery-image">
     <div class="character-name">SONIC</div>
   </div>
-  <div class="gallery-card">
-    <img src="fan3.jpg" alt="Shadow" class="gallery-image">
-    <div class="character-name">SHADOW</div>
-  </div>
-  
-
+ 
 
 <footer>
   <p>© 2025 iO44 Studio. All Rights Reserved.</p>
@@ -89,6 +304,7 @@
       const rect = card.getBoundingClientRect();
       const cardCenter = rect.left + rect.width / 2;
       const distance = Math.abs(galleryCenter - cardCenter);
+
       if (distance < closestDistance) {
         closestDistance = distance;
         closestCard = card;
@@ -107,4 +323,3 @@
 
 </body>
 </html>
-
