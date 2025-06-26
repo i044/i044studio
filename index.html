@@ -790,25 +790,19 @@ body.light-mode .portfolio-note {
   box-shadow: 0 0 12px #00ffff44;
   z-index: 10;
   position: relative;
-  opacity: 1; /* force full opacity */
+  opacity: 1;
 }
 
-/* Make sure it visually separates from animated BG */
+/* Ensures it blocks background layers */
 .socials-box::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: inherit;
+  background-color: inherit;
   z-index: -1;
 }
 
-/* Light mode overrides */
-html.light-mode .socials-box {
-  background-color: #ffffff; /* solid white */
-  color: #00aaaa;
-  box-shadow: 0 0 12px #00aaaa44;
-}
-
+/* Title style */
 .socials-box h2 {
   color: #00ffff;
   font-family: 'Orbitron', sans-serif;
@@ -817,16 +811,19 @@ html.light-mode .socials-box {
   text-shadow: 0 0 5px #00ffff88;
 }
 
+/* List style */
 .socials-box ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/* Item spacing */
 .socials-box li {
   margin: 0.6rem 0;
 }
 
+/* Link style */
 .socials-box a {
   color: #00ffff;
   font-weight: 600;
@@ -835,6 +832,7 @@ html.light-mode .socials-box {
   font-size: 1.05rem;
 }
 
+/* Link hover */
 .socials-box a:hover {
   color: #000;
   background-color: #00ffff;
@@ -842,18 +840,22 @@ html.light-mode .socials-box {
   border-radius: 8px;
 }
 
+/* Light mode override */
 html.light-mode .socials-box {
-  background-color: #ffffff;
+  background-color: #ffffff !important; /* ensure solid white */
+  color: #00aaaa;
   border: 2px solid #00aaaa;
   box-shadow: 0 0 18px #00aaaa66;
-  opacity: 1; /* full opacity */
 }
 
+/* Light mode text/link */
 html.light-mode .socials-box h2,
 html.light-mode .socials-box a {
   color: #00aaaa;
+  text-shadow: none;
 }
 
+/* Light mode hover */
 html.light-mode .socials-box a:hover {
   background-color: #00aaaa;
   color: #ffffff;
