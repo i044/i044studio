@@ -780,10 +780,10 @@ body.light-mode .portfolio-note {
 }
 
 .socials-box {
-  background-color: #111; /* dark mode */
+  background-color: #111;
   padding: 1.5rem;
   border-radius: 10px;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
   color: #00ffff;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
@@ -791,18 +791,22 @@ body.light-mode .portfolio-note {
   z-index: 10;
   position: relative;
   opacity: 1;
+  max-width: 600px;
+  width: 90%;
+  box-sizing: border-box;
 }
 
-/* Ensures it blocks background layers */
+/* Prevent background from bleeding through */
 .socials-box::before {
   content: '';
   position: absolute;
   inset: 0;
   background-color: inherit;
   z-index: -1;
+  border-radius: 10px;
 }
 
-/* Title style */
+/* Headline style */
 .socials-box h2 {
   color: #00ffff;
   font-family: 'Orbitron', sans-serif;
@@ -818,7 +822,7 @@ body.light-mode .portfolio-note {
   margin: 0;
 }
 
-/* Item spacing */
+/* List item spacing */
 .socials-box li {
   margin: 0.6rem 0;
 }
@@ -832,7 +836,7 @@ body.light-mode .portfolio-note {
   font-size: 1.05rem;
 }
 
-/* Link hover */
+/* Hover style */
 .socials-box a:hover {
   color: #000;
   background-color: #00ffff;
@@ -842,24 +846,24 @@ body.light-mode .portfolio-note {
 
 /* Light mode override */
 html.light-mode .socials-box {
-  background-color: #ffffff !important; /* ensure solid white */
+  background-color: #ffffff !important;
   color: #00aaaa;
   border: 2px solid #00aaaa;
   box-shadow: 0 0 18px #00aaaa66;
 }
 
-/* Light mode text/link */
+/* Light mode text and hover */
 html.light-mode .socials-box h2,
 html.light-mode .socials-box a {
   color: #00aaaa;
   text-shadow: none;
 }
 
-/* Light mode hover */
 html.light-mode .socials-box a:hover {
   background-color: #00aaaa;
   color: #ffffff;
 }
+
 
 </style>
 
