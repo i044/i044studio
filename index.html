@@ -859,9 +859,16 @@ body.light-mode .socials-box a img {
   filter: brightness(0.5) saturate(2);
 }
 
-.socials-box .cyan-logo {
-  filter: brightness(0) saturate(100%) invert(70%) sepia(80%) saturate(2000%) hue-rotate(150deg);
-}
+.socials-box a img {
+  width: 24px;
+  height: 24px;
+  transition: 0.3s ease;
+  filter: brightness(1);
+  /* Add neon glow */
+  box-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff, 0 0 18px #00ffff;
+  border-radius: 6px;
+
+box-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff, 0 0 24px #00ffff;
 
 </style>
 
