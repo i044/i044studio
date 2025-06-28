@@ -5,11 +5,32 @@
   <meta charset="UTF-8">
   <title>iO44 Studio | Digital Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicon and fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" href="Logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <!-- ✅ Meta & Social Preview -->
+  <meta name="description" content="iO44 Studio - Digital Portfolio of Airi, Visual Artist and Animator.">
+  <meta property="og:title" content="iO44 Studio | Digital Portfolio">
+  <meta property="og:description" content="Browse artworks, character designs, fanart and more from Airi.">
+  <meta property="og:image" content="https://fteroterachi.github.io/i044studio/Logo.png">
+  <meta property="og:url" content="https://fteroterachi.github.io/i044studio/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ✅ Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XHK4NW74H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5XHK4NW74H');
+  </script>
+
+
   
 <style>
   * {
@@ -562,27 +583,44 @@
   }
 
   .sonic-contact-wrap {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 3rem;
-    flex-wrap: nowrap;
-    margin-top: 2rem;
-    padding-left: 2rem;
-  }
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* makes them stack on mobile */
+}
 
-  .sonic-contact-wrap form {
-    max-width: 600px;
-    flex: 1;
-    margin-left: 2rem;
+.sonic-img {
+  max-width: 300px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+/* Make form responsive */
+form {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 500px;
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .sonic-contact-wrap {
+    flex-direction: column;
+    align-items: center;
   }
 
   .sonic-img {
-    width: 260px;
-    flex-shrink: 0;
-    filter: drop-shadow(0 0 10px #00ffffaa);
-    transform: scaleX(1);
+    max-width: 80%;
   }
+
+  form {
+    width: 90%;
+  }
+}
+
 
   .thank-you-overlay {
     position: fixed;
@@ -762,6 +800,105 @@ body.light-mode .portfolio-note {
   color: #222;
 }
 
+.socials-box {
+  background-color: #111;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  color: #00ffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 0 12px #00ffff44;
+  position: relative;
+  max-width: 400px;
+  text-align: center;
+}
+
+.socials-box h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff88;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links li {
+  margin: 0.6rem 0;
+}
+
+.social-links a {
+  color: #00ffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.social-links a img {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 4px #00ffffaa);
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #000;
+  background-color: #00ffff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+}
+
+/* Light Mode Styles */
+body.light-mode .socials-box {
+  background-color: #ffffff;
+  color: #00aaaa;
+  box-shadow: 0 0 18px #00aaaa66;
+  border: 2px solid #00aaaa;
+}
+
+body.light-mode .socials-box h2,
+body.light-mode .social-links a {
+  color: #00aaaa;
+  text-shadow: none;
+}
+
+body.light-mode .social-links a img {
+  filter: drop-shadow(0 0 4px #00aaaaaa);
+}
+
+body.light-mode .social-links a:hover {
+  background-color: #00aaaa;
+  color: #ffffff;
+}
+
+.about,
+.style-block,
+.testimonial,
+form {
+  border: 1px solid #00ffff55;
+  box-shadow: 0 0 12px #00ffff55;
+  border-radius: 12px;
+}
+
+/* Light Mode Variant */
+body.light-mode .about,
+body.light-mode .style-block,
+body.light-mode .testimonial,
+body.light-mode form {
+  border: 2px solid #00aaaa;
+  box-shadow: 0 0 18px #00aaaa66;
+  border-radius: 12px;
+}
+	
 </style>
 
 </head>
@@ -978,6 +1115,32 @@ body.light-mode .portfolio-note {
     </form>
   </div>
 </section>
+
+<div class="socials-box" data-aos="fade-up">
+  <h2>Follow Airi</h2>
+  <ul class="social-links">
+    <li>
+      <a href="https://www.instagram.com/7akada_airi/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"> Instagram
+      </a>
+    </li>
+    <li>
+      <a href="https://x.com/7akada_airi" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/11823/11823292.png" alt="X"> X
+      </a>
+    </li>
+    <li>
+      <a href="https://www.tiktok.com/@7akada_airi" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"> TikTok
+      </a>
+    </li>
+    <li>
+      <a href="https://7akada-airi.tumblr.com/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Tumblr"> Tumblr
+      </a>
+    </li>
+  </ul>
+</div>
 
 <footer>
   <img src="Logo.png" alt="iO44 Logo" class="footer-logo">
