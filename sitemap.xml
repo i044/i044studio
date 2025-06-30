@@ -3,50 +3,50 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://fteroterachi.github.io/i044studio/</loc>
+    <loc>https://i044.github.io/i044studio/</loc>
     <lastmod>2025-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Gallery Pages (with correct capitalization) -->
+  <!-- Gallery Pages -->
   <url>
-    <loc>https://fteroterachi.github.io/i044studio/Character%20Design.html</loc>
+    <loc>https://i044.github.io/i044studio/Character%20Design.html</loc>
     <lastmod>2025-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://fteroterachi.github.io/i044studio/Fanarts.html</loc>
+    <loc>https://i044.github.io/i044studio/Fanarts.html</loc>
     <lastmod>2025-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://fteroterachi.github.io/i044studio/Concept%20Art.html</loc>
+    <loc>https://i044.github.io/i044studio/Concept%20Art.html</loc>
     <lastmod>2025-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://fteroterachi.github.io/i044studio/Cover.html</loc>
+    <loc>https://i044.github.io/i044studio/Cover.html</loc>
     <lastmod>2025-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://fteroterachi.github.io/i044studio/Manga.html</loc>
+    <loc>https://i044.github.io/i044studio/Manga.html</loc>
     <lastmod>2025-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://fteroterachi.github.io/i044studio/Others.html</loc>
+    <loc>https://i044.github.io/i044studio/Others.html</loc>
     <lastmod>2025-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
