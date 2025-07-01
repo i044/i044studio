@@ -272,6 +272,33 @@ html.light-mode footer {
   border-top: 2px solid #00aaaa44;
 }
 
+.gumroad-link {
+  margin-top: 0.5rem;
+  color: #00ffffcc;
+  font-size: 0.85rem;
+  font-style: italic;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover .gumroad-link {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffffaa;
+}
+
+html.light-mode .gumroad-link {
+  color: #007777cc;
+}
+
+html.light-mode a:hover .gumroad-link {
+  color: #00aaaa;
+  text-shadow: 0 0 6px #00aaaa88;
+}
+
+html.light-mode .gallery-card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 8px #cccccc55;
+}
   </style>
 </head>
 
@@ -302,11 +329,13 @@ html.light-mode footer {
   <button onclick="scrollGallery(1)">Next →</button>
 </div>
 
-<div class="gallery-container" id="gallery">
+<a href="https://i044studio.gumroad.com/l/wlscu" target="_blank" style="text-decoration: none;">
   <div class="gallery-card">
     <img src="Concept Art.jpg" alt="Concept 1" class="gallery-image">
     <div class="character-name">PARALLEL HOST</div>
   </div>
+</a>
+
   <div class="gallery-card">
     <img src="con2.jpg" alt="Concept 2" class="gallery-image">
     <div class="character-name">TOUCHPOINT</div>
@@ -323,10 +352,12 @@ html.light-mode footer {
     <img src="con4.jpg" alt="Concept 5" class="gallery-image">
     <div class="character-name">HOLLOWED BLEAT</div>
   </div>
+ <a href="https://i044studio.gumroad.com/l/i044studio" target="_blank" style="text-decoration: none;">
   <div class="gallery-card">
     <img src="con5.jpg" alt="Concept 6" class="gallery-image">
     <div class="character-name">SUBLIMINAL</div>
   </div>
+</a>
   <div class="gallery-card">
     <img src="con6.png" alt="Concept 7" class="gallery-image">
     <div class="character-name">HEART EYES</div>
