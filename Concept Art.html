@@ -7,7 +7,10 @@
       document.documentElement.classList.add('light-mode');
     }
   </script>
-<link rel="icon" type="image/png" href="Logo.png">
+
+  <!-- ✅ Favicon Logo for Tab -->
+  <link rel="icon" type="image/png" href="Logo.png">
+
   <!-- 🧠 Basic Setup -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,24 +19,23 @@
   <title>Concept Art Gallery | iO44 Studio – Airi Takada</title>
   <meta name="description" content="Dive into Airi Takada’s world-building and visual storytelling through concept art. Explore environment, creature, and character concepts.">
 
- <!-- 🌐 Open Graph (Social Media Sharing) -->
-<meta property="og:title" content="Concept Art Gallery | iO44 Studio">
-<meta property="og:description" content="Browse concept art by Airi Takada – from atmospheric environments to imaginative characters and creatures.">
-<meta property="og:image" content="https://i044.github.io/i044studio/Concept%20Art.jpg">
-<meta property="og:url" content="https://i044.github.io/i044studio/Concept%20Art.html">
-<meta property="og:type" content="website">
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="Concept Art Gallery | iO44 Studio">
+  <meta property="og:description" content="Browse concept art by Airi Takada – from atmospheric environments to imaginative characters and creatures.">
+  <meta property="og:image" content="https://i044.github.io/i044studio/Concept%20Art.jpg">
+  <meta property="og:url" content="https://i044.github.io/i044studio/Concept%20Art.html">
+  <meta property="og:type" content="website">
 
-<!-- 🐦 Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Concept Art Gallery | iO44 Studio">
-<meta name="twitter:description" content="Discover Airi Takada’s visionary concept art — creative works made for animation, world-building, and visual storytelling.">
-<meta name="twitter:image" content="https://i044.github.io/i044studio/Concept%20Art.jpg">
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Concept Art Gallery | iO44 Studio">
+  <meta name="twitter:description" content="Discover Airi Takada’s visionary concept art — creative works made for animation, world-building, and visual storytelling.">
+  <meta name="twitter:image" content="https://i044.github.io/i044studio/Concept%20Art.jpg">
 
-<!-- 🔗 Canonical URL -->
-<link rel="canonical" href="https://i044.github.io/i044studio/Concept%20Art.html">
+  <!-- 🔗 Canonical URL -->
+  <link rel="canonical" href="https://i044.github.io/i044studio/Concept%20Art.html">
 
-
-  <!-- 🌈 Fonts & AOS Animations -->
+  <!-- 🌈 Fonts & AOS -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -148,8 +150,6 @@
       box-shadow: 0 0 8px #00ffff22;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
-      position: relative;
-      transform: scale(1);
     }
 
     .gallery-image {
@@ -184,6 +184,25 @@
       letter-spacing: 0.5px;
     }
 
+    .gumroad-link {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #00ffffcc;
+    }
+
+    .gumroad-link a {
+      color: #00ffff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .gumroad-link a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffffaa;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -192,123 +211,92 @@
       margin-top: 3rem;
       border-top: 2px solid #00ffff44;
     }
-	
-	
-	html.light-mode body {
-  background: #fff;
-  color: #000;
-}
 
-/* or also just this for broad coverage */
-html.light-mode .style-block {
-  background: #fff;
-  color: #000;
-}
+    /* 🌞 Light Mode */
+    html.light-mode body {
+      background: #fff;
+      color: #000;
+    }
 
-html.light-mode body {
-  background: #ffffff;
-  color: #000000;
-}
+    html.light-mode header {
+      background-color: #f0f0f0;
+      color: #000;
+      border-bottom: 2px solid #00ffff44;
+    }
 
-html.light-mode header {
-  background-color: #f0f0f0;
-  color: #000000;
-  border-bottom: 2px solid #00ffff44;
-}
+    html.light-mode .logo {
+      color: #00aaaa;
+      text-shadow: none;
+    }
 
-html.light-mode .logo {
-  color: #00aaaa;
-  text-shadow: none;
-}
+    html.light-mode .back-button {
+      background-color: #00aaaa;
+      color: #fff;
+    }
 
-html.light-mode .back-button {
-  background-color: #00aaaa;
-  color: #fff;
-}
+    html.light-mode .back-button:hover {
+      background-color: #fff;
+      color: #00aaaa;
+      box-shadow: 0 0 12px #00aaaa, 0 0 30px #00aaaa inset;
+    }
 
-html.light-mode .back-button:hover {
-  background-color: #fff;
-  color: #00aaaa;
-  box-shadow: 0 0 12px #00aaaa, 0 0 30px #00aaaa inset;
-}
+    html.light-mode h1 {
+      color: #00aaaa;
+      text-shadow: none;
+    }
 
-html.light-mode h1 {
-  color: #00aaaa;
-  text-shadow: none;
-}
+    html.light-mode .nav-buttons button {
+      background-color: #fff;
+      color: #00aaaa;
+      border-color: #00aaaa;
+    }
 
-html.light-mode .nav-buttons button {
-  background-color: #fff;
-  color: #00aaaa;
-  border-color: #00aaaa;
-}
+    html.light-mode .nav-buttons button:hover {
+      background-color: #00aaaa;
+      color: #fff;
+    }
 
-html.light-mode .nav-buttons button:hover {
-  background-color: #00aaaa;
-  color: #fff;
-}
+    html.light-mode .gallery-card {
+      background-color: #f9f9f9;
+      box-shadow: 0 0 8px #00aaaa22;
+    }
 
-html.light-mode .gallery-card {
-  background-color: #f9f9f9;
-  box-shadow: 0 0 8px #00aaaa22;
-}
+    html.light-mode .gallery-card.active {
+      border: 2px solid #00aaaa;
+      box-shadow: 0 0 20px #00aaaaaa;
+    }
 
-html.light-mode .gallery-card.active {
-  border: 2px solid #00aaaa;
-  box-shadow: 0 0 20px #00aaaaaa;
-}
+    html.light-mode .gallery-card.active .gallery-image {
+      box-shadow: 0 0 20px #00aaaaaa;
+    }
 
-html.light-mode .gallery-card.active .gallery-image {
-  box-shadow: 0 0 20px #00aaaaaa;
-}
+    html.light-mode .character-name {
+      color: #00aaaa;
+    }
 
-html.light-mode .character-name {
-  color: #00aaaa;
-}
+    html.light-mode .gumroad-link a {
+      color: #007777;
+    }
 
-html.light-mode footer {
-  background-color: #f0f0f0;
-  color: #000;
-  border-top: 2px solid #00aaaa44;
-}
+    html.light-mode .gumroad-link a:hover {
+      color: #00aaaa;
+      text-shadow: 0 0 6px #00aaaa88;
+    }
 
-.gumroad-link {
-  margin-top: 0.5rem;
-  color: #00ffffcc;
-  font-size: 0.85rem;
-  font-style: italic;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-a:hover .gumroad-link {
-  color: #00ffff;
-  text-shadow: 0 0 8px #00ffffaa;
-}
-
-html.light-mode .gumroad-link {
-  color: #007777cc;
-}
-
-html.light-mode a:hover .gumroad-link {
-  color: #00aaaa;
-  text-shadow: 0 0 6px #00aaaa88;
-}
-
-html.light-mode .gallery-card {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 8px #cccccc55;
-}
+    html.light-mode footer {
+      background-color: #f0f0f0;
+      color: #000;
+      border-top: 2px solid #00aaaa44;
+    }
   </style>
 </head>
 
-	<!-- Google tag (gtag.js) -->
+<!-- ✅ Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XHK4NW74H"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-5XHK4NW74H');
 </script>
 
@@ -316,7 +304,7 @@ html.light-mode .gallery-card {
 
 <header>
   <div class="logo">
-    <img src="Logo.png" alt="iO44 Logo" class="logo-img" style="height: 45px; vertical-align: middle; margin-right: 10px;">
+    <img src="Logo.png" alt="iO44 Logo" style="height: 45px; vertical-align: middle; margin-right: 10px;">
     <span>iO44 Studio</span>
   </div>
   <a href="index.html" class="back-button">← Back</a>
@@ -330,13 +318,11 @@ html.light-mode .gallery-card {
 </div>
 
 <div class="gallery-container" id="gallery">
-  <a href="https://i044studio.gumroad.com/l/wlscu" target="_blank" style="text-decoration: none;">
-    <div class="gallery-card">
-      <img src="Concept Art.jpg" alt="Concept 1" class="gallery-image">
-      <div class="character-name">PARALLEL HOST</div>
-      <p class="gumroad-link">Available on Gumroad </p>
-    </div>
-  </a>
+  <div class="gallery-card">
+    <img src="Concept Art.jpg" alt="Concept 1" class="gallery-image">
+    <div class="character-name">PARALLEL HOST</div>
+    <p class="gumroad-link">Available on <a href="https://i044studio.gumroad.com/l/wlscu" target="_blank">Gumroad</a></p>
+  </div>
 
   <div class="gallery-card">
     <img src="con2.jpg" alt="Concept 2" class="gallery-image">
@@ -358,13 +344,11 @@ html.light-mode .gallery-card {
     <div class="character-name">HOLLOWED BLEAT</div>
   </div>
 
-  <a href="https://i044studio.gumroad.com/l/i044studio" target="_blank" style="text-decoration: none;">
-    <div class="gallery-card">
-      <img src="con5.jpg" alt="Concept 6" class="gallery-image">
-      <div class="character-name">SUBLIMINAL</div>
-      <p class="gumroad-link">Available on Gumroad </p>
-    </div>
-  </a>
+  <div class="gallery-card">
+    <img src="con5.jpg" alt="Concept 6" class="gallery-image">
+    <div class="character-name">SUBLIMINAL</div>
+    <p class="gumroad-link">Available on <a href="https://i044studio.gumroad.com/l/i044studio" target="_blank">Gumroad</a></p>
+  </div>
 
   <div class="gallery-card">
     <img src="con6.png" alt="Concept 7" class="gallery-image">
@@ -383,10 +367,7 @@ html.light-mode .gallery-card {
   function scrollGallery(direction) {
     const gallery = document.getElementById('gallery');
     const scrollAmount = 350;
-    gallery.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
-    });
+    gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
   }
 
   function updateActiveImage() {
@@ -402,7 +383,6 @@ html.light-mode .gallery-card {
       const rect = card.getBoundingClientRect();
       const cardCenter = rect.left + rect.width / 2;
       const distance = Math.abs(galleryCenter - cardCenter);
-
       if (distance < closestDistance) {
         closestDistance = distance;
         closestCard = card;
