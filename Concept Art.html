@@ -8,7 +8,7 @@
     }
   </script>
 
-  <!-- ✅ Favicon Logo for Tab -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="Logo.png">
 
   <!-- 🧠 Basic Setup -->
@@ -35,7 +35,7 @@
   <!-- 🔗 Canonical URL -->
   <link rel="canonical" href="https://i044.github.io/i044studio/Concept%20Art.html">
 
-  <!-- 🌈 Fonts & AOS -->
+  <!-- 🌈 Fonts & AOS Animations -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -128,7 +128,6 @@
       padding: 2rem;
       padding-left: calc(50vw - 150px);
       padding-right: calc(50vw - 150px);
-      scroll-behavior: smooth;
     }
 
     .gallery-container::-webkit-scrollbar {
@@ -165,7 +164,6 @@
     .gallery-card.active {
       border: 2px solid #00ffff;
       box-shadow: 0 0 20px #00ffffaa;
-      z-index: 2;
       transform: scale(1.08);
     }
 
@@ -181,14 +179,13 @@
       font-weight: 600;
       font-size: 1rem;
       font-family: 'Orbitron', sans-serif;
-      letter-spacing: 0.5px;
     }
 
     .gumroad-link {
       margin-top: 0.5rem;
       font-size: 0.85rem;
       font-style: italic;
-      color: #00ffffcc;
+      color: #999999;
     }
 
     .gumroad-link a {
@@ -212,21 +209,23 @@
       border-top: 2px solid #00ffff44;
     }
 
-    /* 🌞 Light Mode */
+    /* LIGHT MODE 🌞 */
     html.light-mode body {
-      background: #fff;
-      color: #000;
+      background-color: #ffffff;
+      color: #000000;
     }
 
     html.light-mode header {
       background-color: #f0f0f0;
       color: #000;
-      border-bottom: 2px solid #00ffff44;
     }
 
     html.light-mode .logo {
       color: #00aaaa;
-      text-shadow: none;
+    }
+
+    html.light-mode h1 {
+      color: #00aaaa;
     }
 
     html.light-mode .back-button {
@@ -238,11 +237,6 @@
       background-color: #fff;
       color: #00aaaa;
       box-shadow: 0 0 12px #00aaaa, 0 0 30px #00aaaa inset;
-    }
-
-    html.light-mode h1 {
-      color: #00aaaa;
-      text-shadow: none;
     }
 
     html.light-mode .nav-buttons button {
@@ -257,16 +251,13 @@
     }
 
     html.light-mode .gallery-card {
-      background-color: #f9f9f9;
-      box-shadow: 0 0 8px #00aaaa22;
+      background-color: #ffffff;
+      box-shadow: 0 0 8px #cccccc55;
+      border: 1px solid #ccc;
     }
 
     html.light-mode .gallery-card.active {
-      border: 2px solid #00aaaa;
-      box-shadow: 0 0 20px #00aaaaaa;
-    }
-
-    html.light-mode .gallery-card.active .gallery-image {
+      border-color: #00aaaa;
       box-shadow: 0 0 20px #00aaaaaa;
     }
 
@@ -274,24 +265,26 @@
       color: #00aaaa;
     }
 
+    html.light-mode .gumroad-link {
+      color: #777777;
+    }
+
     html.light-mode .gumroad-link a {
-      color: #007777;
+      color: #00aaaa;
     }
 
     html.light-mode .gumroad-link a:hover {
-      color: #00aaaa;
       text-shadow: 0 0 6px #00aaaa88;
     }
 
     html.light-mode footer {
       background-color: #f0f0f0;
       color: #000;
-      border-top: 2px solid #00aaaa44;
     }
   </style>
 </head>
 
-<!-- ✅ Google Analytics -->
+<!-- 🧠 Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XHK4NW74H"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -304,7 +297,7 @@
 
 <header>
   <div class="logo">
-    <img src="Logo.png" alt="iO44 Logo" style="height: 45px; vertical-align: middle; margin-right: 10px;">
+    <img src="Logo.png" alt="iO44 Logo" class="logo-img" style="height: 45px; vertical-align: middle; margin-right: 10px;">
     <span>iO44 Studio</span>
   </div>
   <a href="index.html" class="back-button">← Back</a>
@@ -379,7 +372,7 @@
     let closestCard = null;
     let closestDistance = Infinity;
 
-    cards.forEach((card) => {
+    cards.forEach(card => {
       const rect = card.getBoundingClientRect();
       const cardCenter = rect.left + rect.width / 2;
       const distance = Math.abs(galleryCenter - cardCenter);
@@ -389,7 +382,7 @@
       }
     });
 
-    cards.forEach((card) => card.classList.remove('active'));
+    cards.forEach(card => card.classList.remove('active'));
     if (closestCard) closestCard.classList.add('active');
   }
 
