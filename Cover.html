@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
+  <!-- 🌗 Theme Mode Loader -->
+  <script>
     if (localStorage.getItem('theme') === 'light') {
       document.documentElement.classList.add('light-mode');
     }
   </script>
+
+  <link rel="icon" type="image/png" href="Logo.png">
+
+  <!-- Basic Meta Setup -->
   <meta charset="UTF-8">
-  <title>Cover Illustrations | iO44 Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 🔍 SEO Meta -->
+  <title>Cover Illustrations | iO44 Studio – Airi Takada</title>
+  <meta name="description" content="Discover Airi Takada's cover illustrations — powerful digital compositions perfect for books, albums, and media presentations.">
+
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="Cover Illustrations | iO44 Studio">
+  <meta property="og:description" content="Explore Airi Takada’s visually striking cover art created for books, albums, and creative projects.">
+  <meta property="og:image" content="https://i044.github.io/i044studio/Cover%20Art.jpg">
+  <meta property="og:url" content="https://i044.github.io/i044studio/Cover.html">
+  <meta property="og:type" content="website">
+
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cover Illustrations | iO44 Studio">
+  <meta name="twitter:description" content="Bold, expressive digital covers by Airi Takada — made for impact across visual media.">
+  <meta name="twitter:image" content="https://i044.github.io/i044studio/Cover%20Art.jpg">
+
+  <!-- 🔗 Canonical URL -->
+  <link rel="canonical" href="https://i044.github.io/i044studio/Cover.html">
+
+  <!-- 🖋 Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -157,6 +184,25 @@
       letter-spacing: 0.5px;
     }
 
+    .gumroad-link {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #999999;
+    }
+
+    .gumroad-link a {
+      color: #00ffff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .gumroad-link a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffffaa;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -165,99 +211,97 @@
       margin-top: 3rem;
       border-top: 2px solid #00ffff44;
     }
-	
-	
-	html.light-mode body {
-  background: #fff;
-  color: #000;
-}
 
-/* or also just this for broad coverage */
-html.light-mode .style-block {
-  background: #fff;
-  color: #000;
-}
+    html.light-mode body {
+      background: #fff;
+      color: #000;
+    }
 
-html.light-mode body {
-  background: #ffffff;
-  color: #000000;
-}
+    html.light-mode header {
+      background-color: #f0f0f0;
+      color: #000000;
+      border-bottom: 2px solid #00ffff44;
+    }
 
-html.light-mode header {
-  background-color: #f0f0f0;
-  color: #000000;
-  border-bottom: 2px solid #00ffff44;
-}
+    html.light-mode .logo {
+      color: #00aaaa;
+      text-shadow: none;
+    }
 
-html.light-mode .logo {
-  color: #00aaaa;
-  text-shadow: none;
-}
+    html.light-mode .back-button {
+      background-color: #00aaaa;
+      color: #fff;
+    }
 
-html.light-mode .back-button {
-  background-color: #00aaaa;
-  color: #fff;
-}
+    html.light-mode .back-button:hover {
+      background-color: #fff;
+      color: #00aaaa;
+      box-shadow: 0 0 12px #00aaaa, 0 0 30px #00aaaa inset;
+    }
 
-html.light-mode .back-button:hover {
-  background-color: #fff;
-  color: #00aaaa;
-  box-shadow: 0 0 12px #00aaaa, 0 0 30px #00aaaa inset;
-}
+    html.light-mode h1 {
+      color: #00aaaa;
+      text-shadow: none;
+    }
 
-html.light-mode h1 {
-  color: #00aaaa;
-  text-shadow: none;
-}
+    html.light-mode .nav-buttons button {
+      background-color: #fff;
+      color: #00aaaa;
+      border-color: #00aaaa;
+    }
 
-html.light-mode .nav-buttons button {
-  background-color: #fff;
-  color: #00aaaa;
-  border-color: #00aaaa;
-}
+    html.light-mode .nav-buttons button:hover {
+      background-color: #00aaaa;
+      color: #fff;
+    }
 
-html.light-mode .nav-buttons button:hover {
-  background-color: #00aaaa;
-  color: #fff;
-}
+    html.light-mode .gallery-card {
+      background-color: #f9f9f9;
+      box-shadow: 0 0 8px #00aaaa22;
+    }
 
-html.light-mode .gallery-card {
-  background-color: #f9f9f9;
-  box-shadow: 0 0 8px #00aaaa22;
-}
+    html.light-mode .gallery-card.active {
+      border: 2px solid #00aaaa;
+      box-shadow: 0 0 20px #00aaaaaa;
+    }
 
-html.light-mode .gallery-card.active {
-  border: 2px solid #00aaaa;
-  box-shadow: 0 0 20px #00aaaaaa;
-}
+    html.light-mode .gallery-card.active .gallery-image {
+      box-shadow: 0 0 20px #00aaaaaa;
+    }
 
-html.light-mode .gallery-card.active .gallery-image {
-  box-shadow: 0 0 20px #00aaaaaa;
-}
+    html.light-mode .character-name {
+      color: #00aaaa;
+    }
 
-html.light-mode .character-name {
-  color: #00aaaa;
-}
+    html.light-mode footer {
+      background-color: #f0f0f0;
+      color: #000;
+      border-top: 2px solid #00aaaa44;
+    }
 
-html.light-mode footer {
-  background-color: #f0f0f0;
-  color: #000;
-  border-top: 2px solid #00aaaa44;
-}
+    html.light-mode .gumroad-link {
+      color: #777777;
+    }
 
+    html.light-mode .gumroad-link a {
+      color: #00aaaa;
+    }
+
+    html.light-mode .gumroad-link a:hover {
+      text-shadow: 0 0 6px #00aaaa88;
+    }
   </style>
 </head>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XHK4NW74H"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-5XHK4NW74H');
 </script>
-	
+
 <body>
 
 <header>
@@ -279,6 +323,7 @@ html.light-mode footer {
   <div class="gallery-card">
     <img src="Cover Art.jpg" alt="Cover 1" class="gallery-image">
     <div class="caption">CHROME PULSE</div>
+    <p class="gumroad-link">Available on <a href="https://i044studio.gumroad.com/l/vzfmm" target="_blank">Gumroad</a></p>
   </div>
   <div class="gallery-card">
     <img src="cover2.png" alt="Cover 2" class="gallery-image">
