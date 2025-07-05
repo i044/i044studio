@@ -1,55 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 🌐 Meta + SEO -->
+  <title>Airi | Digital Artist & Animator | iO44 Studio</title>
+  <meta name="description" content="Explore iO44 Studio, the digital portfolio of Airi — a visual artist and animator. View original character designs, fanart, and animation projects.">
 
-  <!-- Homepage -->
-  <url>
-    <loc>https://i044.github.io/i044studio/</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <!-- 🔗 Canonical -->
+  <link rel="canonical" href="https://i044.github.io/i044studio/">
 
-  <!-- Gallery Pages -->
-  <url>
-    <loc>https://i044.github.io/i044studio/Character%20Design.html</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- 📱 Social Sharing Preview -->
+  <meta property="og:title" content="Airi | Digital Artist & Animator | iO44 Studio">
+  <meta property="og:description" content="Discover digital artworks, original characters, fanart, and animation by Airi. Dive into a world of storytelling through design.">
+  <meta property="og:image" content="https://i044.github.io/i044studio/Logo.png">
+  <meta property="og:url" content="https://i044.github.io/i044studio/">
+  <meta property="og:type" content="website">
 
-  <url>
-    <loc>https://i044.github.io/i044studio/Fanarts.html</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Airi | Digital Artist & Animator | iO44 Studio">
+  <meta name="twitter:description" content="Digital illustrations and original character work by Airi — discover the portfolio now.">
+  <meta name="twitter:image" content="https://i044.github.io/i044studio/Logo.png">
 
-  <url>
-    <loc>https://i044.github.io/i044studio/Concept%20Art.html</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- 🖼️ Favicon & Fonts -->
+  <link rel="icon" href="Logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <url>
-    <loc>https://i044.github.io/i044studio/Cover.html</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- 📊 Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XHK4NW74H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-5XHK4NW74H');
+  </script>
 
-  <url>
-    <loc>https://i044.github.io/i044studio/Manga.html</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://i044.github.io/i044studio/Others.html</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-</urlset>
+  <!-- 📚 Schema Markup (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Airi Takada",
+    "url": "https://i044.github.io/i044studio/",
+    "image": "https://i044.github.io/i044studio/Logo.png",
+    "sameAs": [
+      "https://instagram.com/yourartpage",
+      "https://tiktok.com/@yourhandle"
+    ],
+    "jobTitle": "Visual Artist & Animator"
+  }
+  </script>
+</head>
